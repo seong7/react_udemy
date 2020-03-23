@@ -43,7 +43,7 @@ import React, { useState } from 'react'; // Functional Compoenent 에서 사용�
     
 
 //     /* State 변경하는 법 */
-//     //   DON'T DO :: this.state.persons[0].name = "Jason";  __ (React 에서 변화 인식하지 못함)
+//     //   DON'T DO  : this.state.persons[0].name = "Jason";  __ (React 에서 변화 인식하지 못함)
 //     // setState 사용할 것 !! Component object 의 method 임 (Component 객체는 React library 에 의해 추가됨)
 //     this.setState( {
 //       persons: [
