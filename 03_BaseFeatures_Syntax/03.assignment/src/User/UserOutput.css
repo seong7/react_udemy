@@ -1,0 +1,11 @@
+.UserOutput{
+    margin-top: 4rem;
+    border: 1px solid rgb(243, 122, 122);
+    box-shadow: 0 2px 3px rgb(187, 96, 96);
+    width: 40rem;
+    justify-items: center;
+}
+.UserOutput:hover{
+    transform: translateY(-0.2rem);
+    cursor: pointer;
+}
