@@ -18,7 +18,7 @@ github : https://github.com/facebook/create-react-app
 
   (version 선택은 강의와 동일한 project structure 를 형성하기 위한 목적)
   ```
-  - Dev version service
+  - Dev version server 실행
   ```
   npm run start
   ```
@@ -27,7 +27,7 @@ github : https://github.com/facebook/create-react-app
   - ### Components
    : React app 의 핵심 building block(구성요소)   
     => React app 은 **Component Tree** 라고도 불림   
-    - 하나의 **root component** ("App") 과 무한한 **child component** 로 구성됨
+    - 하나의 **root component** (보통 "App") 와 무한한 **child component** 들로 구성됨
   - ### Component 의 두 종류 및 생성 방법 [[예시>>](./react-complete-guide/public/Person.js)]
     #### 1. Functional components
       - 주로 쓰임
@@ -110,7 +110,7 @@ github : https://github.com/facebook/create-react-app
     - #### State   
       : component class 또는 function(react 16.8버전 이상) 내에서만 사용 가능한 객체   
         - naming 은 **반드시** **state** 로 해야함 _ 그래야만 re-render 동작 가능   
-        - class-based componene 에서 사용 시 **this.state** 로 호출 
+        - **class-based component** 에서 사용 시 **this.state** 로 호출 
         - <u>보통 **상위 요소**에서 **하위 요소 reder** 시 **props 의 값 지정**해줄 때 사용</u>
         - 예시
           ```
@@ -149,3 +149,7 @@ github : https://github.com/facebook/create-react-app
   - ### Event
     - [>> event 종류](https://reactjs.org/docs/events.html#supported-events)
     - [>> code 예시]()
+
+  - ### Style
+    - inline styles
+    - style sheets
