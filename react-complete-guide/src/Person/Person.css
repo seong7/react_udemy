@@ -1,0 +1,10 @@
+/* 해당 파일은 global css file 임 : class 명에 따라 app 전체에 적용됨 */
+
+.Person {
+    width: 60%;
+    margin: 16px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+}
