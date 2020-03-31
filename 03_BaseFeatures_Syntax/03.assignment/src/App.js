@@ -6,9 +6,9 @@ import './App.css';
 class App extends Component {
   state = {
     memo: [
-      {name: "메모 1", memo: "내용", num:0},
-      {name: "메모 2", memo: "내용", num:1},
-      {name: "메모 3", memo: "내용", num:2},
+      {name: "memo 1", memo: "content", num:0},
+      {name: "memo 2", memo: "content", num:1},
+      {name: "memo 3", memo: "content", num:2},
     ],
     selectedMemo : 0,
   }
@@ -29,9 +29,9 @@ class App extends Component {
         console.log(event);
         this.setState({
           memo: [
-            {name: "메모 1", memo: event.target.value, num:0},
-            {name: "메모 2", memo: "내용", num:1},
-            {name: "메모 3", memo: "내용", num:2},
+            {name: "memo 1", memo: event.target.value, num:0},
+            {name: "memo 2", memo: "content", num:1},
+            {name: "memo 3", memo: "content", num:2},
           ],
         })
         break;
@@ -39,9 +39,9 @@ class App extends Component {
         console.log(this.state.selectedMemo);
         this.setState ({
           memo: [
-            {name: "메모 1", memo: "내용", num:0},
-            {name: "메모 2", memo: event.target.value, num:1},
-            {name: "메모 3", memo: "내용", num:2},
+            {name: "memo 1", memo: "content", num:0},
+            {name: "memo 2", memo: event.target.value, num:1},
+            {name: "memo 3", memo: "content", num:2},
           ],
         })
         break;
@@ -49,9 +49,9 @@ class App extends Component {
         console.log(this.state.selectedMemo);
         this.setState ({
           memo: [
-            {name: "메모 1", memo: "내용", num:0},
-            {name: "메모 2", memo: "내용", num:1},
-            {name: "메모 3", memo: event.target.value, num:2},
+            {name: "memo 1", memo: "content", num:0},
+            {name: "memo 2", memo: "content", num:1},
+            {name: "memo 3", memo: event.target.value, num:2},
           ],
         })
         break;

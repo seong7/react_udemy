@@ -29,7 +29,8 @@ class App extends Component {
       { name : "Manu", age : 29},
       { name: "Seongjin", age : 28}
     ],
-    otherState: "some other value"
+    otherState: "some other value",
+    showPersons: false
   }
   // state : 
   // Component 상속하는 class-based component 내에서만 사용할 수 있는 내장 객체
@@ -69,6 +70,13 @@ class App extends Component {
     })
   }
 
+  togglePersonHandler = () => {
+    const doesShow = this.state.showPersons;
+    this.setState({showPersons: !doesShow});
+    // React 는 변경된 shoPersons 와 변경되지 않은 state 의 property 들을 merge 시킴
+    // merge 후 변경된 사항 render 
+  }
+
   render() {
     const style = {
       backgroundColor: "white",
@@ -84,7 +92,10 @@ class App extends Component {
         {/* 
           event 주는 방법 
             1. bind 로 기존 method borrowing (선호)
+                - render 된 상태에서는 dom 요소 자체가 객체이므로 App class 의 instance 의 메소드를 borrowing 해야지 쓸 수 있음.
+                - eventHandler.bind(this, "handler의 매개변수") 형식으로 this (App 객체) 를 주므로 method 내에서 this 를 올바르게 사용 가능
             2. arrow function 의 실행문에 method 사용 (비효율적일 수 있으므로 지양)
+                - render 된 상태에서 dom 요소 (객체) 자체의 function 으로 사용하므로
         */}
         <button 
           style={style /* inline style 을 넣어주는 jsx 문법 __ 약간의 제약이 있음 (hover 같은 것 완벽히 구현 힘듬) */}
@@ -108,6 +119,29 @@ class App extends Component {
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}/>
+
+        {/*  */}
+        <button 
+          style={style}
+          onClick={this.togglePersonHandler}>Toggle</button>
+        { 
+          this.state.showPersons 
+            ? <div>
+                <Person 
+                  name={this.state.persons[0].name} 
+                  age={this.state.persons[0].age}/>
+                <Person 
+                  name={this.state.persons[1].name} 
+                  age={this.state.persons[1].age}
+                  click={this.switchNameHandler.bind(this, "Max!")  /* event handler 인 fn 을 "props.click" 으로 전달 */}
+                  changed={this.nameChangedHandler /* props.changed __ event handler 전달 */}/>
+                <Person 
+                  name={this.state.persons[2].name} 
+                  age={this.state.persons[2].age}/>
+              </div> 
+              /* 위 컴포넌트가 생성될 때는 React.createElement() 가 실행됨 */
+            : null
+        }
       </div>
       // <div>dd</div> jsx expression 은 반드시 한가지 부모 element를 가질 수 있음
       );
@@ -115,7 +149,7 @@ class App extends Component {
       /* 위의 jsx 는 아래 js 코드로 compile 됨 */
       // jsx 가 훨씬 간단함 ( 특히 component tree 가 깊어질 경우 )
       // return React.createElement("div"/* 추가할 element */, {className: "App"} /* configuration (없으면 null) */, /* 추가할 자식 element */ React.createElement("h1", null, "Hi, I\'m a React App!!!"));
-    }
+  }
 }
 export default App;
 
