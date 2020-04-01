@@ -114,8 +114,10 @@ class App extends Component {
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, "Max!")  /* event handler 인 fn 을 "props.click" 으로 전달 */}
-          changed={this.nameChangedHandler /* props.changed __ event handler 전달 */}/>
+          click={/*this.switchNameHandler.bind(this, "Max!")*/
+                  () => this.switchNameHandler("bind 없이 성공 !")
+                    /* event handler 인 fn 을 "props.click" 으로 전달 */}
+          changed={ ()=>{  this.nameChangedHandler }    /* props.changed __ event handler 전달 */}/>
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}/>
